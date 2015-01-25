@@ -15,8 +15,8 @@ class HeadCounter
      * | : ROOM     ;
      * | :          ;
      * .............;
-     * @returns bool true From left to right
-     *               false From right to left
+     * @returns int 0 From left to right
+     *               1 From right to left
      */
     public function trigger()
     {
