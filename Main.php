@@ -9,6 +9,8 @@
 error_reporting(-1);
 ini_set("display_errors", "On");
 
+require 'vendor/autoload.php';
+/*
 function __autoload($name)
 {
     if (file_exists($name . ".php")) {
@@ -19,6 +21,7 @@ function __autoload($name)
 
     throw new Exception("Unable to load $name.");
 }
+*/
 
 $head_counter = new HeadCounter();
 
