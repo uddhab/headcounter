@@ -7,5 +7,17 @@
  */
 
 class HeadCounter {
-
+    /*
+     * Left         Right
+     * .............;
+     * | :          ;
+     * | : ROOM     ;
+     * | :          ;
+     * .............;
+     * @returns bool true From left to right
+     *               false From right to left
+     */
+    public function trigger() {
+        return mt_rand(0, 1);
+    }
 }

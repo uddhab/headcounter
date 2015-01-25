@@ -21,5 +21,11 @@ function __autoload($name) {
 
 $head_counter = new HeadCounter();
 
-$notifier = new MainCountNotifier();
 $counter = new Counter();
+$notifier = new MainCountNotifier($counter);
+
+$notifier->updateCount($head_counter->trigger());
+
+$ui = new UI($counter);
+$ui->displayCount();
+$ui->backupCount();
