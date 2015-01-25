@@ -17,7 +17,10 @@ class UI
 
     public function displayCount()
     {
-        echo $this->counter->getCount();
+        $count = $this->counter->getCount();
+        echo $count;
+
+        return $count;
     }
 
     public function backupCount()
