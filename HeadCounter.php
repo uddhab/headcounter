@@ -6,7 +6,8 @@
  * Time: 7:12 PM
  */
 
-class HeadCounter {
+class HeadCounter
+{
     /*
      * Left         Right
      * .............;
@@ -17,7 +18,8 @@ class HeadCounter {
      * @returns bool true From left to right
      *               false From right to left
      */
-    public function trigger() {
+    public function trigger()
+    {
         return mt_rand(0, 1);
     }
 }

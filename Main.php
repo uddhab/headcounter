@@ -7,11 +7,12 @@
  */
 
 error_reporting(-1);
-ini_set('display_errors', 'On');
+ini_set("display_errors", "On");
 
-function __autoload($name) {
-    if (file_exists($name . '.php')) {
-        include $name . '.php';
+function __autoload($name)
+{
+    if (file_exists($name . ".php")) {
+        include $name . ".php";
 
         return true;
     }

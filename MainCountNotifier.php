@@ -6,7 +6,8 @@
  * Time: 7:09 PM
  */
 
-class MainCountNotifier {
+class MainCountNotifier
+{
     protected $counter;
 
     public function __construct(Counter $counter)

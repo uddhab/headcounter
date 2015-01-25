@@ -6,7 +6,8 @@
  * Time: 7:55 PM
  */
 
-class UI {
+class UI
+{
     protected $counter;
 
     public function __construct(Counter $counter)

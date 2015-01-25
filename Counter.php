@@ -6,7 +6,8 @@
  * Time: 7:11 PM
  */
 
-class Counter {
+class Counter
+{
     protected $count;
 
     public function __construct()
