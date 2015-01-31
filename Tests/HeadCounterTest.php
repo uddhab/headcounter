@@ -8,8 +8,35 @@
 
 class HeadCounterTest extends PHPUnit_Framework_TestCase
 {
-    public function testTrigger()
+    protected $head_counter;
+    protected $counter;
+    protected $notifier;
+    protected $ui;
+
+    public function testTriggerReturnsZeroOrOne()
     {
-        $this->assertEquals(1, 1);
+        $result = $this->head_counter->trigger();
+
+        if ($result == 0 or $result == 1) {
+            $zeroOrOne = true;
+        }
+
+        $this->assertTrue(
+            $zeroOrOne,
+            "The result should be either 0 or 1"
+        );
+    }
+
+    public function setUp()
+    {
+        $this->head_counter = new HeadCounter();
+
+        $this->counter = new Counter();
+
+        $this->notifier = new MainCountNotifier($this->counter);
+
+        $this->notifier->updateCount($this->head_counter->trigger());
+
+        $this->ui = new UI($this->counter);
     }
 }
