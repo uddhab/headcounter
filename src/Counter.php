@@ -10,10 +10,8 @@ class Counter
 {
     protected $count;
 
-    public function __construct()
+    public function __construct($count = 0)
     {
-        $count = file_get_contents("count");
-
         $this->count = $count;
     }
 

@@ -25,4 +25,9 @@ class MainCountNotifier
 
         $this->counter->remove();
     }
+
+    public function getCounter()
+    {
+        return $this->counter;
+    }
 }

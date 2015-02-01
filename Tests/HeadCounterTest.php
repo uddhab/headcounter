@@ -12,6 +12,7 @@ class HeadCounterTest extends PHPUnit_Framework_TestCase
     protected $counter;
     protected $notifier;
     protected $ui;
+    protected $tempFile;
 
     public function testTriggerReturnsZeroOrOne()
     {
@@ -31,12 +32,21 @@ class HeadCounterTest extends PHPUnit_Framework_TestCase
     {
         $this->head_counter = new HeadCounter();
 
-        $this->counter = new Counter();
+        $this->tempFile = tmpfile();
+        fwrite($this->tempFile, "0");
+
+        $this->counter = new Counter(fread($this->tempFile, 1024));
 
         $this->notifier = new MainCountNotifier($this->counter);
 
         $this->notifier->updateCount($this->head_counter->trigger());
 
         $this->ui = new UI($this->counter);
+    }
+
+    public function tearDown()
+    {
+        fclose($this->tempFile);
+
     }
 }

@@ -9,7 +9,7 @@
 error_reporting(-1);
 ini_set("display_errors", "On");
 
-require 'vendor/autoload.php';
+require "vendor/autoload.php";
 /*
 function __autoload($name)
 {
@@ -25,11 +25,11 @@ function __autoload($name)
 
 $head_counter = new HeadCounter();
 
-$counter = new Counter();
+$counter = new Counter(file_get_contents("count"));
 $notifier = new MainCountNotifier($counter);
 
 $notifier->updateCount($head_counter->trigger());
 
 $ui = new UI($counter);
 $ui->displayCount();
-$ui->backupCount();
+$ui->backupCount("count");

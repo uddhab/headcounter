@@ -23,8 +23,8 @@ class UI
         return $count;
     }
 
-    public function backupCount()
+    public function backupCount($file)
     {
-        file_put_contents("count", $this->counter->getCount());
+        file_put_contents($file, $this->counter->getCount());
     }
 }
