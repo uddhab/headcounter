@@ -28,6 +28,10 @@ class ValueUpdaterTest extends PHPUnit_Framework_TestCase
             array(null, 0),
             array(1, 0),
             array(0, 1),
+            array(
+                array(0, "a", null, 0, 0, 0 , 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2),
+                14
+            )
         );
     }
 
