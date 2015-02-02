@@ -6,6 +6,8 @@ class ValueUpdaterTest extends PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider valueProvider
+     * @param $value
+     * @param $expected
      */
     public function testIfCountIsCorrect($value, $expected)
     {
