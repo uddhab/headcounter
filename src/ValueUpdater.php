@@ -61,6 +61,8 @@ class ValueUpdater implements ValueUpdaterInterface
 
     public function persistCount()
     {
-        file_put_contents($this->file, $this->getCurrentCount());
+        if (!file_put_contents($this->file, $this->getCurrentCount())) {
+            throw new Exception('Persistent unsuccessful');
+        };
     }
 }
