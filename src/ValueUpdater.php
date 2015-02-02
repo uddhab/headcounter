@@ -4,13 +4,26 @@ class ValueUpdater implements ValueUpdaterInterface
 {
     protected $count;
 
-    public function recount($input_from_device)
+    protected $file;
+
+    public function __construct($file = 'count')
     {
-        if ($this->count === null) {
+        $this->file = $file;
+
+        if (file_exists($file)) {
+            $this->count = file_get_contents($file);
+        } else {
             $this->count = 0;
         }
+    }
 
+    public function recount($input_from_device)
+    {
         if ($this->count < 1  && $input_from_device == 1) {
+            return false;
+        }
+
+        if ($input_from_device === null) {
             return false;
         }
 
@@ -22,11 +35,22 @@ class ValueUpdater implements ValueUpdaterInterface
             return false;
         }
 
+        try {
+            $this->persistCount();
+        } catch (Exception $e) {
+            return false;
+        }
+
         return true;
     }
 
     public function getCurrentCount()
     {
         return $this->count;
+    }
+
+    public function persistCount()
+    {
+        file_put_contents($this->file, $this->getCurrentCount());
     }
 }
