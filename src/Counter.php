@@ -1,11 +1,15 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: User
+ * User: Uddhab
  * Date: 1/25/2015
  * Time: 7:11 PM
  */
 
+/**
+ * Class Counter
+ *
+ * This class know how to count.
+ */
 class Counter
 {
     protected $count;
