@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 1/25/2015
- * Time: 7:12 PM
- */
 
-class HeadCounter
+class ValueGenerator implements ValueGeneratorInterface
 {
     /*
      * Left         Right
@@ -18,7 +12,7 @@ class HeadCounter
      * @returns int 0 From left to right
      *               1 From right to left
      */
-    public function trigger()
+    public function generate()
     {
         return mt_rand(0, 1);
     }

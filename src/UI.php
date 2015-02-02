@@ -1,30 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 1/25/2015
- * Time: 7:55 PM
- */
 
-class UI
+class UI implements UIInterface
 {
-    protected $counter;
-
-    public function __construct(Counter $counter)
+    public function display($value)
     {
-        $this->counter = $counter;
-    }
+        $message = "I";
 
-    public function displayCount()
-    {
-        $count = $this->counter->getCount();
-        echo $count;
+        if ($value > 999) {
+            $message = "L";
+        }
 
-        return $count;
-    }
+        if ($value < 0) {
+            $message = "S";
+        }
 
-    public function backupCount($file)
-    {
-        file_put_contents($file, $this->counter->getCount());
+        if ($value < 999 && $value >= 0 && !ctype_alpha($value)) {
+            $message = $value;
+        }
+
+        echo $message;
+
+        return $message;
     }
 }
