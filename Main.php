@@ -14,6 +14,8 @@ require 'vendor/autoload.php';
 $generator = new ValueGenerator();
 $value = $generator->generate();
 
+//$values = array(0, "a", null, 0, 0, 0 , 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2);
+
 $updater = new ValueUpdater();
 $updater->recount($value);
 

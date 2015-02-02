@@ -19,6 +19,16 @@ class ValueUpdater implements ValueUpdaterInterface
 
     public function recount($input_from_device)
     {
+        if (is_array($input_from_device)) {
+            $this->count = 0;
+
+            foreach ($input_from_device as $value) {
+                $this->recount($value);
+            }
+
+            return true;
+        }
+
         if ($this->count < 1  && $input_from_device == 1) {
             return false;
         }
