@@ -2,10 +2,11 @@
 
 interface UIInterface
 {
-    /*
-     * Displays the value to give it to user
+    /**
+     * Displays value
      *
-     * @value integer
+     * @param $value integer
+     * @return integer
      */
     public function display($value);
 }

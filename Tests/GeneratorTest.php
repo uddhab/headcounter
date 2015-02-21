@@ -4,7 +4,7 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
 {
     public function testDisplaysZeroOrOne()
     {
-        $generator = new ValueGenerator();
+        $generator = new InOutGenerator();
         $oneOrZero = false;
 
         $result = $generator->generate();

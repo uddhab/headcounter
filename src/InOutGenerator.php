@@ -1,7 +1,10 @@
 <?php
 
-class ValueGenerator implements ValueGeneratorInterface
+class InOutGenerator implements InOutGeneratorInterface
 {
+    const IN = 0;
+
+    const OUT = 1;
     /*
      * Left         Right
      * .............;
@@ -14,6 +17,6 @@ class ValueGenerator implements ValueGeneratorInterface
      */
     public function generate()
     {
-        return mt_rand(0, 1);
+        return mt_rand(self::IN, self::OUT);
     }
 }

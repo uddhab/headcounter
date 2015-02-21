@@ -18,8 +18,6 @@ class UI implements UIInterface
             $message = $value;
         }
 
-        echo $message;
-
         return $message;
     }
 }
