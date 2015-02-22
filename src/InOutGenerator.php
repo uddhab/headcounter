@@ -2,9 +2,6 @@
 
 class InOutGenerator implements InOutGeneratorInterface
 {
-    const IN = 0;
-
-    const OUT = 1;
     /*
      * Left         Right
      * .............;
@@ -17,6 +14,6 @@ class InOutGenerator implements InOutGeneratorInterface
      */
     public function generate()
     {
-        return mt_rand(self::IN, self::OUT);
+        return mt_rand(LeftRightSensor::IN, LeftRightSensor::OUT);
     }
 }

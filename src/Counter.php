@@ -15,6 +15,11 @@ abstract class Counter implements CanCountInterface
         $this->count = $this->retrieveCount();
     }
 
+    public function reset()
+    {
+        $this->count = 0;
+    }
+
     public function getCurrentCount()
     {
         return $this->count;
@@ -23,11 +28,18 @@ abstract class Counter implements CanCountInterface
     /**
      * Operates on count according to the parameter $inOrOut
      *
-     * @param $value in or out
+     * @param $inOrOut in or out
      * @return mixed
      */
     abstract public function recount($inOrOut);
 
+    /**
+     * Operates on count according to the array of $inOrOut
+     *
+     * @param $inOrOuts array of in or out
+     * @return mixed
+     */
+    abstract public function recountFromArray($inOrOuts);
     /**
      * Should persiste current count value to some memory
      *

@@ -14,5 +14,11 @@ $inOrOut = $sensor->inOrOut($inOrOut);
 $counter = new PersonCounter();
 $counter->recount($inOrOut);
 
+/*
+$counter->reset();
+$array = array(1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1);
+$counter->recountFromArray($array);
+*/
+
 $ui = new UI();
 echo $ui->display($counter->getCurrentCount());

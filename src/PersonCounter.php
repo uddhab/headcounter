@@ -15,7 +15,7 @@ class PersonCounter extends Counter
      */
     public function recount($inOrOut)
     {
-        if ($inOrOut == InOutGenerator::IN) {
+        if ($inOrOut == LeftRightSensor::IN) {
             $this->count++;
         } else {
             $this->count--;
@@ -52,5 +52,18 @@ class PersonCounter extends Counter
         }
 
         return $count;
+    }
+
+    /**
+     * Operates on count according to the array of $inOrOut
+     *
+     * @param $inOrOuts array of in or out
+     * @return mixed
+     */
+    public function recountFromArray($inOrOuts)
+    {
+        foreach ($inOrOuts as $inOrOut) {
+            $this->recount($inOrOut);
+        }
     }
 }
